@@ -33,6 +33,8 @@ volumes: [
             container('docker') {
                 sh('docker build -t slalomdojo/team1_image .')
                 sh('docker images')
+                sh('//////////////')
+                sh('docker ps')
             }
         }
     }
