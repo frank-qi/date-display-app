@@ -32,7 +32,14 @@ volumes: [
         stage('Pushing Docker Image') {
             container('docker') {
                 sh('docker build -t qfrank76/dojo_node_jenkins .')
-                sh('docker push qfrank76/dojo_node_jenkins')
+                withCredentials([
+                    usernamePassword(credentialsId: 'dockerHub',
+                                     passwordVariable: 'dockerHubPassword',
+                                     usernameVariable: 'dockerHubUser')
+                ]) {
+                    sh('docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}')
+                    sh('docker push qfrank76/dojo_node_jenkins')
+                }
                 sh('docker images')
             }
         }
