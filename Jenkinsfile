@@ -37,7 +37,7 @@ volumes: [
                                      passwordVariable: 'dockerHubPassword',
                                      usernameVariable: 'dockerHubUser')
                 ]) {
-                    sh('docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}')
+                    sh("docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}")
                     sh('docker push qfrank76/dojo_node_jenkins')
                 }
                 sh('docker images')
