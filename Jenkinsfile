@@ -47,7 +47,7 @@ volumes: [
         
         stage('Deploy to Kubernetes') {
             container('kubectl') {
-                sh('kubectl run TEAM1_APP --image=qfrank76/dojo_node_jenkins')
+                sh('kubectl run team1-app --image=qfrank76/dojo_node_jenkins')
             }
         }
     }
