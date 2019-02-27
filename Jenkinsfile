@@ -17,9 +17,7 @@ podTemplate(label: label, containers: [
 
             stage('Testing') {
                 echo "TESTINGGGGGG!!!!"
-                sh('cd date-display-app')
-                sh('npm install')
-                sh('npm test')
+                sh('cd date-display-app; npm install; npm test')
             }
         }
     }
