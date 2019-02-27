@@ -1,3 +1,5 @@
+def label = "worker-${UUID.randomUUID().toString()}"
+
 podTemplate(label: label, containers: [
     containerTemplate(name: 'docker', image: 'node:carbon-jessie', command: 'cat', ttyEnabled: true),
 ]) {
