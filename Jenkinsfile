@@ -31,8 +31,8 @@ volumes: [
 
         stage('Pushing Docker Image') {
             container('docker') {
-                        sh('docker build -t slalomdojo/team1_image .')
-            sh('ls -la')
+                sh('docker build -t slalomdojo/team1_image .')
+                sh('docker images')
             }
         }
     }
