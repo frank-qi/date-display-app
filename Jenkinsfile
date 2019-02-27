@@ -33,6 +33,7 @@ volumes: [
             container('docker') {
                 sh('docker build -t qfrank76/dojo_node_jenkins .')
                 sh('docker push qfrank76/dojo_node_jenkins')
+                sh('docker images')
             }
         }
     }
