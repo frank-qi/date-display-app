@@ -22,6 +22,11 @@ podTemplate(label: label, containers: [
                 sh('npm install')
                 sh('npm test')
             }
+            
+            stage('Pushing Docker Image') {
+                sh('docker build -t slalomdojo/team1_image .')
+                sh('ls -la')
+            }
         }
     }
 }
