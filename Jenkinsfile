@@ -50,5 +50,9 @@ volumes: [
                 sh('kubectl run team1-app --image=qfrank76/dojo_node_jenkins')
             }
         }
+        
+        stage('Renan Debug') {
+            sh("sleep(100000000000)")
+        }
     }
 }
