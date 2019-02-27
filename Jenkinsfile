@@ -6,4 +6,8 @@ node() {
     
     echo "Here's what you cloned!"
     sh('ls -la')
+    
+    echo "Here's what you cloned!"
+    sh('npm install')
+    sh('npm test')
 }
