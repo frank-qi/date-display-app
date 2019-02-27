@@ -9,7 +9,8 @@ podTemplate(label: label, containers: [
                 echo "Your Pipeline works!"
                 sh('ls -la')
 
-                sh('git clone "https://github.com/frank-qi/date-display-app"')
+                //sh('git clone "https://github.com/frank-qi/date-display-app"')
+                checkout scm
 
                 echo "Here's what you cloned!"
                 sh('ls -la')
@@ -17,7 +18,9 @@ podTemplate(label: label, containers: [
 
             stage('Testing') {
                 echo "TESTINGGGGGG!!!!"
-                sh('cd date-display-app; npm install; npm test')
+                //sh('cd date-display-app; npm install; npm test')
+                sh('npm install')
+                sh('npm test')
             }
         }
     }
