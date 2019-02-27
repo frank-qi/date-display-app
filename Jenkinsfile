@@ -32,8 +32,7 @@ volumes: [
         stage('Pushing Docker Image') {
             container('docker') {
                 sh('docker build -t qfrank76/dojo_node_jenkins .')
-                sh('docker images')
-                sh('docker ps')
+                sh('docker push qfrank76/dojo_node_jenkins')
             }
         }
     }
