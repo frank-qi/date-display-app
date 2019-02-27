@@ -16,11 +16,10 @@ podTemplate(label: label, containers: [
             }
 
             stage('Testing') {
-                    container('docker') {}
-                    echo "TESTINGGGGGG!!!!"
-                    sh('cd date-display-app')
-                    sh('npm install')
-                    sh('npm test')
+                echo "TESTINGGGGGG!!!!"
+                sh('cd date-display-app')
+                sh('npm install')
+                sh('npm test')
             }
         }
     }
